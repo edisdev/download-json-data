@@ -6,20 +6,20 @@
             file-name="Periyodik Tablo - Bazı Elementler"
             :data-titles="titles"
             class="periodic_table color-1"
-            button-text="Periodik Veriyi EXCEL Olarak İndir"/>
+            button-text="Download Period Table As Excel"/>
   <!-- FOR CSV FİLE  -->
     <Download :download-data="periodic_table"
             file-type="csv"
             file-name="Periyodik Tablo - Bazı Elementler"
             :data-titles="titles"
             class="periodic_table color-2"
-            button-text="Periodik Veriyi CSV Olarak İndir"/>
+            button-text="Download Period Table As CSV"/>
     <!-- FOR JSON FİLE -->
     <Download :download-data="periodic_table"
             file-type="json"
             file-name="Periyodik Tablo - Bazı Elementler"
             class="periodic_table color-3"
-            button-text="Periodik Veriyi JSON Olarak İndir"/>
+            button-text="Download Period Table As JSON"/>
   </section>
 </template>
 <script>
