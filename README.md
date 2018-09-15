@@ -13,7 +13,9 @@
 # Using
 
 > import download components
-import Download from '@/components/Download'
+<br/>
+  
+   import Download from '@/components/Download'
 
  ```html
    <Download :download-data="periodicTable"
