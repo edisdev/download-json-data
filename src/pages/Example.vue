@@ -130,7 +130,7 @@ export default {
   .datas .editor {
     max-width: 400px;
     width: 100%;
-    min-height: 220px;
+    min-height: 300px;
     height: 100%;
     border-radius: 3px;
     background: #000;
@@ -154,5 +154,14 @@ export default {
       max-width: 200px;
       min-height: 200px;
     }
+  }
+
+  @media screen and (max-width: 420px) {
+    .datas {
+      flex-direction: column;
+    }
+     .datas .code-field {
+       width: 100%;
+     }
   }
 </style>
