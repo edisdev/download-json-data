@@ -1,7 +1,9 @@
 # Download Json Data with VUE Components
 
-<img src="./static/images/excel_file.png" width="400">
-<img src="./static/images/json_file.png" width="400">
+<img src="./static/images/app.png"/>
+
+<img src="./static/images/excel_file.png"  width="49%"/>
+<img src="./static/images/json_file.png"  width="49%"/>
 
 # Install
 ```
