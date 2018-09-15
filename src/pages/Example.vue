@@ -88,6 +88,7 @@ export default {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 10px;
   }
  .periodic_table {
     color: #fff !important;
@@ -124,7 +125,7 @@ export default {
   .datas .editor {
     max-width: 400px;
     width: 100%;
-    min-height: 400px;
+    min-height: 300px;
     height: 100%;
     border-radius: 3px;
     background: #000;
@@ -138,5 +139,15 @@ export default {
   .editor:focus {
     outline: 0;
     border: 1px solid greenyellow;
+  }
+
+  @media screen and (max-width: 750px){
+    .periodic_table {
+      width: 100px;
+    }
+    .datas .editor {
+      max-width: 200px;
+      min-height: 200px;
+    }
   }
 </style>

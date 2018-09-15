@@ -31,6 +31,14 @@ export default {
 }
 .app-title {
   font-size: 35px;
-  margin-bottom: 40px;
+  margin-bottom: 2%;
 }
+ @media screen and (max-width: 750px){
+    .periodic_table {
+      width: 100px;
+    }
+    .datas .editor {
+      font-size: 25px;
+    }
+  }
 </style>
