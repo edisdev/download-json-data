@@ -9,11 +9,6 @@
 <script>
 export default {
   name: 'DownloadButton',
-  data () {
-    return {
-      convertData: []
-    }
-  },
   props: {
     fileName: {
       type: String,
@@ -38,61 +33,61 @@ export default {
       required: true
     }
   },
-  mounted () {
-    let contentType = ''
-    let dData = ''
-    let blob
-    let url
-    let titles
-    switch (this.fileType) {
-      case 'json':
-        contentType = 'application/json'
-        dData = JSON.stringify(this.downloadData, null, 2)
-        blob = new Blob([dData], { type: contentType })
-        url = window.URL.createObjectURL(blob)
-        this.convertData = url
+  computed: {
+    convertData () {
+      let contentType = ''
+      let dData = ''
+      let blob
+      let url
+      let titles
+      switch (this.fileType) {
+        case 'json':
+          contentType = 'application/json'
+          dData = JSON.stringify(this.downloadData, null, 2)
+          blob = new Blob([dData], { type: contentType })
+          url = window.URL.createObjectURL(blob)
+          break
 
-        break
-
-      case 'csv':
-        dData += 'data:text/csv;sep=;charset=utf-8,%EF%BB%BF'
-        titles = this.DataTitles.join(',')
-        dData += titles + '\r\n'
-        this.downloadData.map(item => {
-          const keys = Object.keys(item)
-          keys.forEach((key, index) => {
-            dData += item[key]
-            if (keys.length > index) {
-              dData += ','
-            }
+        case 'csv':
+          dData += 'data:text/csv;sep=;charset=utf-8,%EF%BB%BF'
+          titles = this.DataTitles.join(',')
+          dData += titles + '\r\n'
+          this.downloadData.map(item => {
+            const keys = Object.keys(item)
+            keys.forEach((key, index) => {
+              dData += item[key]
+              if (keys.length > index) {
+                dData += ','
+              }
+            })
+            dData += '\r\n'
           })
-          dData += '\r\n'
-        })
-        this.convertData = dData
+          url = dData
 
-        break
+          break
 
-      case 'xls':
-        contentType = 'application/xml'
+        case 'xls':
+          contentType = 'application/xml'
 
-        titles = this.DataTitles.join(',')
-        dData += titles + '\r\n'
-        this.downloadData.map(item => {
-          const keys = Object.keys(item)
-          keys.forEach((key, index) => {
-            dData += item[key]
-            if (keys.length > index) {
-              dData += ','
-            }
+          titles = this.DataTitles.join(',')
+          dData += titles + '\r\n'
+          this.downloadData.map(item => {
+            const keys = Object.keys(item)
+            keys.forEach((key, index) => {
+              dData += item[key]
+              if (keys.length > index) {
+                dData += ','
+              }
+            })
+            dData += '\r\n'
           })
-          dData += '\r\n'
-        })
-        blob = new Blob([dData], { type: contentType })
-        url = window.URL.createObjectURL(blob)
-        this.convertData = url
-        break
-      default:
-        break
+          blob = new Blob([dData], { type: contentType })
+          url = window.URL.createObjectURL(blob)
+          break
+        default:
+          break
+      }
+      return url
     }
   }
 }
