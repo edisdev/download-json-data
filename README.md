@@ -1,6 +1,28 @@
 # Download Json Data with VUE Components
 
-> A Vue.js project
+<img src="./static/images/excel_file.png" width="400">
+<img src="./static/images/json_file.png" width="400">
+
+# Install
+```
+   yarn add json-data-convert-file   
+```
+
+# Using
+
+> import download components
+import Download from '@/components/Download'
+
+ ```html
+   <Download :download-data="periodicTable"
+            file-type="xls"
+            file-name="Periyodik Tablo - Bazı Elementler"
+            :data-titles="titles"
+            class="periodic_table color-1"
+            button-text="Download Period Table As Excel"/>
+
+```
+
 
 ## Build Setup
 
