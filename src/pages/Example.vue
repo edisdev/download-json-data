@@ -22,9 +22,13 @@
             button-text="Download Period Table As JSON"/>
     <div class="datas">
       <textarea v-model="code" @change="changeData" class="editor"></textarea>
-      <code class="json">
+      <div class="code-field">
+        <h4>DATA</h4>
+        <hr>
+        <code class="json">
         {{ periodicTable }}
       </code>
+      </div>
     </div>
   </section>
 </template>
@@ -103,9 +107,10 @@ export default {
     justify-content: center;
     margin-top: 40px;
   }
-  .datas code {
+  .datas .code-field {
     width: 40%;
     margin-top: 20px;
+    margin-left: 8px;
   }
   .periodic_table + .periodic_table {
     margin-left: 7px;
@@ -125,7 +130,7 @@ export default {
   .datas .editor {
     max-width: 400px;
     width: 100%;
-    min-height: 300px;
+    min-height: 220px;
     height: 100%;
     border-radius: 3px;
     background: #000;

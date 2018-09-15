@@ -21,6 +21,9 @@ export default {
   margin: 0;
   padding: 0;
 }
+body {
+  background: rgba(3, 169, 244, 0.08);
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
